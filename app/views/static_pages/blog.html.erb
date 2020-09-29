@@ -10,6 +10,17 @@
   			<%= link_to "Create New Post", new_post_path, class: 'woof-link' %>
   			<div class="clearfix"></div><br>
   			<%= link_to "Download CSV", posts_path(format: "csv"), class: 'woof-link dl' %>
+
+  			<div class="clearfix"></div><br>
+  			<div class="import">
+  				<p class="bmargin0">Import Posts</p>
+  				<hr>
+  				<%= form_tag import_posts_path, multipart: true do %>
+  				  <%= file_field_tag :file %>
+  				  <hr>
+  				  <%= submit_tag "Import" %>
+  				<% end %>
+  			</div>
       </div>
 		<% end %>
 	</div>

@@ -105,7 +105,7 @@ class Location < ApplicationRecord
     header = spreadsheet.row(1)
     (2..spreadsheet.last_row).each do |i|
       row = Hash[[header, spreadsheet.row(i)].transpose]
-      location = find_by(store_name: row["store_name"]) || new
+      location = find_by(id: row["id"]) || new
       location.attributes = row.to_hash
       location.save!
     end
