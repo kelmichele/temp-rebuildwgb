@@ -1,0 +1,53 @@
+<% @page_title = "Day Care & Pet Resort" %>
+<% @page_description = "Woof Gang Bakery offers Doggie Day Care and Pet Resort services at select locations." %>
+
+
+<div class="services-layout daycare">
+	<div class="serv-slider inline-show">
+		<div class="inside lg">
+			<div class="il-slideshow uk-position-relative uk-visible-toggle uk-light" uk-slideshow="autoplay: true; max-height: 600; autoplay-interval: 4000; animation: push">
+				<div>
+				  <ul class="uk-slideshow-items">
+						<li><%= image_tag('daycare2.jpg', class: 'img-responsive uk-cover', alt: 'Dog running with toy') %></li>
+						<li><%= image_tag('mss.jpg', class: 'img-responsive uk-cover', alt: 'Three dogs in yard') %></li>
+						<li><%= image_tag('daycare1.jpg', class: 'img-responsive uk-cover', alt: 'Golden retriever smiling in grass') %></li>
+						<li><%= image_tag('daycare4.jpg', class: 'img-responsive uk-cover', alt: 'Beagle puppy on a leash') %></li>
+						<li><%= image_tag('daycare5.jpg', class: 'img-responsive uk-cover', alt: 'Dog playing with tennis ball') %></li>
+				  </ul>
+				  <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a> 
+			    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a> 
+			  </div>
+			</div>
+
+			<div class="title">
+	  	  <h1><%= image_tag('hlogo-resort.png', class: 'img-responsive srv-logo resort', alt: 'Woof Gang Bakery, pet resort logo')%>
+	  	  <%= image_tag('hlogo-daycare.png', class: 'img-responsive srv-logo daycare', alt: 'Woof Gang Bakery, doggie day care logo')%></h1>
+			</div>
+			<div class="seal"><div class="sicon"></div></div>
+		</div>
+	</div>
+
+	<div class="statement alt-lay">
+		<div class="inside med2-def">
+	  	<div class="text one">
+	  		<h2>Woof Gang Doggie Day Care</h2>
+				<p>Woof Gang Doggie Day Care offers a clean, safe and fun environment for monitored interaction with other dogs.</p>
+			</div>
+
+			<div class="text two">
+		  	<h2>Woof Gang Pet Resort</h2>
+				<p>Woof Gang Pet Resort is a boutique boarding facility that provides caring, convenient luxury dog boarding.</p>
+		  </div>
+	  </div>
+	</div>
+
+	<div class="locations-disc">
+		<div class="inside med">
+			<h4>Doggie Day Care and Pet Resort services are offered only at select locations.</h4>
+			<div class="btn-hlf">
+				<%= link_to "View Locations", "/tags/doggie-daycare", class: 'woof-link' %>
+			</div>
+		</div>
+	</div>
+
+</div>

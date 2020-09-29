@@ -1,0 +1,109 @@
+<% @ft_franch = capture do %>
+  <ul class="ft-list franch">
+  	<li><%= link_to "Franchising", franchising_path %></li>
+  	<li><%= link_to "Training & Support", training_support_path %></li>
+  	<li><%= link_to "Approval Process", approval_process_path %></li>
+  	<li><%= link_to "Real Estate", real_estate_path %></li>
+  	<li><%= link_to "Franchise FAQs", faq_path %></li>
+  	<li><%= link_to "Franchise Inquiries", franchise_inquiries_path %></li>
+  </ul>
+<% end %>
+
+<% @ft_serve = capture do %>
+	<ul class="ft-list serv">
+		<li><%= link_to "Retail", retail_path %></li>
+		<li><%= link_to "Grooming", grooming_path %></li>
+		<li><%= link_to "Self-Service Grooming", self_service_grooming_path %></li>
+		<li><%= link_to "Day Care & Pet Resort", doggie_daycare_path %></li>
+		<li><%= link_to "Wellness Clinic", vet_clinic_path %></li>
+	</ul>
+<% end %>
+
+<% @ft_info = capture do %>
+  <ul class="ft-list info">
+		<li><%= link_to "Home", root_path %></li>
+		<li><%= link_to "Locations", locations_path %></li>
+		<li><%= link_to "Blog", blog_path %></li>
+		<li><%= link_to "Contact Us", contact_path %></li>
+		<% if user_signed_in? && current_user.admin? %>
+			<li class="account"><%= link_to "Admin Account*", account_path %></li>
+		<% end %>
+	</ul>
+<% end %>
+
+<% @ft_contact = capture do %>
+	<p class="tmargin0">7575 Dr. Phillips Blvd<br> Suite 275<br>Orlando, FL 32819<br>
+	<a href="tel:4073559210"><%= number_to_phone(4073559210, delimiter: '-', class: 'tel') %></a></p>
+<% end %>
+
+
+<footer id="footer" class="footer-level">
+	<div class="inside">
+		<div class="full-ft">
+			<div class="fbs fb1">
+				<h5>Franchise</h5>
+				<div class="title-line sm"></div><div class="clearfix"></div>
+				<%= @ft_franch %>
+			</div>
+
+			<div class="fbs fb2">
+				<h5>Services</h5>
+				<div class="title-line sm"></div><div class="clearfix"></div>
+				<%= @ft_serve %>
+			</div>
+
+			<div class="fbs fb3">
+				<h5>Info</h5>
+				<div class="title-line sm"></div><div class="clearfix"></div>
+				<%= @ft_info %>
+			</div>
+
+			<div class="fbs fb4">
+				<h5>Woof Gang Bakery Corporate Office</h5>
+				<div class="title-line sm"></div><div class="clearfix"></div>
+				<%= @ft_contact %>
+				<%= link_to 'Media & Press Inquiries', media_inquiries_path, class: 'text-link' %>
+				<%= link_to 'Vendor Relations', vendor_path, class: 'text-link' %>
+				<%= link_to 'Real Estate Submissions', real_estate_submissions_path, class: 'text-link' %>
+			</div>
+		</div>
+
+		<div class="sm-ft">
+			<ul uk-accordion="multiple: true">
+		    <li class="acc-li">
+	        <a class="uk-accordion-title" href="#"><h5>Franchise</h5></a>
+	        <div class="uk-accordion-content"><%= @ft_franch %></div>
+		    </li>
+
+		    <li class="acc-li">
+	        <a class="uk-accordion-title" href="#"><h5>Services</h5></a>
+	        <div class="uk-accordion-content"><%= @ft_serve %></div>
+		    </li>
+
+		    <li class="acc-li">
+	        <a class="uk-accordion-title" href="#"><h5>Info</h5></a>
+	        <div class="uk-accordion-content"><%= @ft_info %></div>
+		    </li>
+
+		    <li class="acc-li">
+	        <a class="uk-accordion-title" href="#"><h5>Contact</h5></a>
+	        <div class="uk-accordion-content"><%= @ft_contact %>
+					<%= link_to 'Media & Press Inquiries', media_inquiries_path, class: 'text-link' %>
+					<%= link_to 'Vendor Relations', vendor_path, class: 'text-link' %>
+					<%= link_to 'Real Estate Submissions', real_estate_submissions_path, class: 'text-link' %>
+	        </div>
+		    </li>
+			</ul>
+		</div>
+
+
+		<%= render 'layouts/disclaimer' %>
+
+
+		<div class="btm">
+			<div class="copy"><p>Copyright <%= Time.now.year %> Woof Gang Bakery. All rights reserved. </p></div>
+			<div class="hs"><p>Design by <%= link_to "High Seas Design House.", 'https://hsdesignhouse.com', target: '_blank' %> </p></div>
+		</div>
+	</div>
+	<a href="#" class="scroll-up">Scroll</a>
+</footer>

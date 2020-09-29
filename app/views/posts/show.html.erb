@@ -1,0 +1,81 @@
+<% @page_title = @post.title.titleize %>
+<% @page_description = "#{@post.title}" %>
+
+<div class="full-post">
+	<div class="title">
+		<div class="inside med2">
+			<h1><%= @post.title %></h1>
+		</div>
+	</div>
+
+	<div class="back-link">
+		<%= link_to "/blog", class: 'text-link back' do %>
+			<span class="" uk-icon="icon: arrow-left;"></span> Back to All Posts
+		<% end %>
+	</div>
+
+	<% if user_signed_in? && current_user.admin? %>
+		<div class="admin-side">
+			<!-- <= render 'actions' %> -->
+	    <button class="admin-uk wl-uk uk-float-right" type="button"><span  uk-icon="icon: settings;"></span></button>
+	    <div uk-dropdown="mode: click; pos: bottom-right; boundary: .wl-uk;">
+      	<div class="admin-btns">
+      		<div class="manu">
+      			<%= render 'actions' %>
+      		</div>
+      	</div>
+      </div>
+		</div>
+	<% end %>
+
+	<div class="dets" uk-lightbox>
+		<div class="post-body">
+			<div class="image">
+				<% if @post.image.attached? %>
+				  <%= image_tag @post.image, alt: "#{@post.title}"%>
+				<% end %>
+			</div>
+
+			<div class="post-content">
+				<!-- <p><%= @post.this_post %></p> -->
+				<% if @post.date %>
+					<p class="date"><%= @post.date.strftime("%m/%d/%Y")  %></p>
+				<% end %>
+				<%= simple_format(@post.content) %>
+				<!-- html_safe -->
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="recent-posts">
+	<div class="inside svn">
+		<h3>Recent Posts</h3>
+		<% recent.each do |recent| %>
+			<%= link_to recent.slug, class: 'rpost' do %>
+				<% if recent.image.attached? %>
+				  <div class="image"><%= image_tag recent.image %></div>
+				  <% else %>
+				  <div class="image"><%= image_tag 'blog-recent.png' %></div>
+				<% end %>
+
+				<div class="rtitle">
+					<!-- <%= truncate(recent.title, length:150) %>  -->
+					<%= recent.title %>
+				</div>
+
+			<% end %>
+		<% end %>
+	</div>
+</div>
+
+
+<!--
+ 	<% if @post.prev %>
+   	<%= link_to "< Previous", @post.prev %>
+ 	<% end %>
+
+	<% if @post.next_post %>
+    <%= link_to "Next >", @post.next_post %>
+ 	<% end %>
+-->

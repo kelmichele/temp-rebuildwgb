@@ -1,0 +1,114 @@
+<!-- < @page_title = "Your Neighborhood Pet Store" %> -->
+<% @page_title = "Woof Gang Bakery" %>
+<% @page_description = "Woof Gang Bakery is the leading specialty retailer of pet food, pet supplies and professional pet grooming in North America, with more than 130 locations across the U.S." %>
+
+<!-- 1296x720 -->
+<div class="full-show">
+	<div class="inside lg">
+		<div class="fw-slideshow uk-position-relative uk-visible-toggle uk-light" uk-slideshow="autoplay: true; autoplay-interval: 4000; animation: push">
+	    <ul class="uk-slideshow-items newSize">
+				<% @slides.each do |slide| %>
+					<li><%= image_tag(slide.image, class: 'img-responsive uk-position-bottom', alt: "#{slide.title}")%></li>
+				<% end %>
+	    </ul>
+	    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a> 
+	    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a> 
+	  </div>
+	</div>
+</div>
+
+<div class="nlay-intro with-seal">
+	<div class="inside home-def">
+	<!-- <div class="inside home-def"> -->
+		<div class="text">
+			<h1>Woof Gang Bakery</h1>
+			<h2><span>Woof Gang Bakery is the leading specialty retailer of pet food, pet supplies and professional pet grooming in North America, with more than 130 locations open or under development across the U.S.</span>
+			Woof Gang Bakery offers the very best in pet care by providing quality products and grooming with a service-oriented approach. Each location is a neighborhood store committed to the well-being, health and happiness of pets.</h2>
+		</div>
+
+		<div class="seal"><%= image_tag('seals/seal-top2020.png', class: 'sealcon') %></div>
+	</div>
+</div>
+
+<div class="bg-sec ff">
+	<div class="text">
+			<div class="btext">
+				<h4>Our approach to franchising is very simple:</h4>
+				<p class="two">Successful franchising is built upon successful franchisees.<br> Our leadership philosophy is based upon the belief that we should direct, not dominate the franchise system, and that our franchisees should have a voice and participate in that direction.</p>
+			</div>
+			<div class="seal"><%= image_tag('seals/seal-fast2019.png', class: 'sealcon') %></div>
+	</div>
+
+	<div class="images four"></div>
+</div>
+
+<div class="nlay-logos none">
+	<div class="inside one">
+		<div class="over">
+    	<div class="text">
+				<h3>Woof Gang Bakery does it all</h3>
+				<p>We offer a number of services to help keep your pets healthy and spoiled!<br>
+				 	Contact your local Woof Gang Bakery to find out which services are available in your area.<br>
+					Select a service from the logos below to visit the page, and learn more.
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="full logos">
+		<div class="inside">
+			<%= link_to retail_path, class: 'serve-tl bakery' do %>
+	      <%= image_tag('logo-bakery.png', class: 'img-responsive logo', alt: 'Woof Gang Bakery logo')%>
+			<% end %>
+
+			<%= link_to grooming_path, class: 'serve-tl grooming' do %>
+	      <%= image_tag('hlogo-grooming.png', class: 'img-responsive logo', alt: 'Woof Gang Bakery grooming logo')%>
+			<% end %>
+
+			<%= link_to doggie_daycare_path, class: 'serve-tl resort' do %>
+	      <%= image_tag('hlogo-resort.png', class: 'img-responsive logo', alt: 'Woof Gang Bakery pet resort logo')%>
+			<% end %>
+
+			<%= link_to vet_clinic_path, class: 'serve-tl vet' do %>
+	      <%= image_tag('hlogo-wellness.png', class: 'img-responsive logo', alt: 'Woof Gang Bakery wellness clinic logo')%>
+			<% end %>
+
+			<%= link_to self_service_grooming_path, class: 'serve-tl ss' do %>
+	      <%= image_tag('hlogo-ss.png', class: 'img-responsive logo', alt: 'Woof Gang Bakery self-service grooming logo')%>
+			<% end %>
+
+			<%= link_to doggie_daycare_path, class: 'serve-tl daycare' do %>
+	      <%= image_tag('hlogo-daycare.png', class: 'img-responsive logo', alt: 'Woof Gang Bakery doggie day care logo')%>
+			<% end %>
+		</div>
+	</div>
+</div>
+
+<div class="wgb-slides">
+	<div class="uk-position-relative uk-visible-toggle uk-light" uk-slider="autoplay: true; autoplay-interval: 4000;">
+	  <ul class="uk-slider-items">
+			<li><%= image_tag('ivory.jpg', class: 'img-responsive img3', alt: 'Ivory the dog')%></li>
+			<li><%= image_tag('sav1601.jpg', class: 'img-responsive img3', alt: 'Shaggy pup in a Woof Gang store')%></li>
+			<li><%= image_tag('group.jpg', class: 'img-responsive img3', alt: 'Three dogs smiling in the yard')%></li>
+			<li><%= image_tag('gibson.jpg', class: 'img-responsive img4', alt: 'Cute dog with Woof Gang Bakery treats')%></li>
+			<li><%= image_tag('harley-bone.png', class: 'img-responsive img3', alt: 'Husky puppy sniffing Woof Gang homemade bone')%></li>
+			<li><%= image_tag('waco-vera.jpg', class: 'img-responsive img3', alt: 'Golden retriever with a Woof Gang Bakery shopping bag')%></li>
+			<li><%= image_tag('monty.jpg', class: 'img-responsive img3', alt: 'Monty the dog, in the yard')%></li>
+			<li><%= image_tag('sasha.jpg', class: 'img-responsive img3', alt: 'Sasha the dog, next to the Woof Gang treat table')%></li>
+			<li><%= image_tag('cg-bone.jpg', class: 'img-responsive img4', alt: 'White dog with Woof Gang homemade bone')%></li>
+	  </ul>
+
+		<a class="uk-position-center-left uk-position-small" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+		<a class="uk-position-center-right uk-position-small" href="#" uk-slidenav-next uk-slider-item="next"></a>
+	</div>
+</div>
+
+<div class="banner-locations">
+	<div class="inside med2">
+		<h4>More Than 130 Locations Nationwide</h4>
+		<div class="btn-hlf">
+			<%= link_to "Find One Near You", locations_path, class: 'woof-link' %>
+		</div>
+	</div>
+</div>
+

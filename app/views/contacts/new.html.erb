@@ -1,0 +1,42 @@
+<% @page_title = "Contact Us" %>
+<% @page_description = "Contact the Woof Gang Bakery Corporate office or fill out our general inquiry form." %>
+
+<div class="services-layout contactus">
+	<div class="franchise-head v2">
+		<div class="inside med">
+			<!-- 998x500 -->
+			<%= image_tag('little-bones.jpg', class: 'img-responsive', alt: 'Woof Gang Bakery homemade bones') %>
+			<div class="text">
+				<h1><%= @page_title %></h1>
+			</div>
+		</div>
+	</div>
+
+	<div class="cbody">
+		<div class="inside med2-def">
+			<div class="left">
+				<p class="sp"><b>Woof Gang Bakery Corporate Office</b></p>
+  			<div class="col address">
+  				<p>7575 Dr. Phillips Blvd<br>
+	  			Suite 275<br>
+	  			Orlando, FL 32819</p>
+	  		</div>
+
+  			<div class="col nums">
+  				<p><a href="tel:4073559210"><%= number_to_phone(4073559210, delimiter: '-', class: 'tel') %></a></p>
+  				<p>Monday-Friday: 8am-5pm (ET)</p>
+  			</div>
+
+  			<div class="col btn-row">
+	  			<%= link_to 'Media & Press Inquiries', media_inquiries_path, class: 'woof-link' %>
+	  			<%= link_to 'Vendor Relations', vendor_path, class: 'woof-link' %>
+	  			<%= link_to 'Real Estate Submissions', real_estate_submissions_path, class: 'woof-link' %>
+				</div>
+			</div>
+
+			<div class="right">
+			  <%= render 'form' %>
+			</div>
+		</div>
+	</div>
+</div>

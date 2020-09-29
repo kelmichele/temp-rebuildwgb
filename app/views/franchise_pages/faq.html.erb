@@ -1,0 +1,182 @@
+<% @page_title = "Franchise FAQs" %>
+<% @page_description = "Read through frequently asked questions. Feel free to contact the Woof Gang Bakery corporate office for more information." %>
+
+<div class="franchise-head v2">
+	<div class="inside med">
+		<%= image_tag('franch-faq.JPG', class: 'img-responsive feat', alt: 'Woof Gang Bakery wrapped suv') %>
+
+		<div class="text">
+			<h2>Become a Woof Gang Bakery Franchisee</h2>
+			<h1><%= @page_title %></h1>
+		</div>
+		<div class="seal"><div class="sicon"></div></div>
+	</div>
+</div>
+
+	<% @why = capture do %>
+		<p>We want our franchisees to be successful! Woof Gang Bakery offers quality products and a unique concept that aligns with a growing, multi-billion dollar industry. Our stores are strategically positioned in upscale retail properties and we have an effective marketing program that creates awareness and drives business.</p>
+
+		<p>We provide extensive training to assist you with everything you need to know to operate your own successful Woof Gang Bakery. We strive for success and will only award franchises to those who share that same drive and dedication.</p>
+
+		<p>To be successful in business, you have to enjoy the business you choose. If you love dogs, Woof Gang Bakery offers you the opportunity to combine your passion with the chance to run your own business in an exciting, growing industry.</p>
+	<% end %>
+
+	<% @what = capture do %>
+		<p>The key to continuing the success of Woof Gang Bakery and maintaining our mission is selecting the right people to join our team as franchise owners. We have multiple franchise owners who have diverse backgrounds and business experiences. Many of our owners, however, were once Woof Gang Bakery customers who were attracted by the quality of our products, our vision of service, and our solid support infrastructure.
+		A prospective franchisee must be willing to work hard, be committed to excellent customer service, be a team player with a drive to succeed, and control their own financial future.</p>
+
+		<p>As we share our vision with others, we are looking for individuals who demonstrate the following:</p>
+		<ul class="disc">
+			<li>High degree of personal integrity</li>
+			<li>Dedication to upholding the Woof Gang Bakery mission</li>
+			<li>Entrepreneurial spirit</li>
+			<li>Proven ability to motivate and train others</li>
+			<li>Devote full-time best efforts to the day-to-day operation of a Woof Gang Bakery store</li>
+			<li>Complete a comprehensive training program and be proficient in all aspects of operating a Woof Gang Bakery store</li>
+			<li>Financial resources and the ability to manage them</li>
+			<li>Provide outstanding customer service</li>
+			<li>Active community participant</li>
+		</ul>
+	<% end %>
+
+	<% @involved = capture do %>
+		<p>The franchisee's participation, supervision, and their full and exclusive time in daily store operations is essential to building their business.
+		For all partnerships, we require the general partner to participate personally in the direct operation of their<br class="xl"> Woof Gang Bakery store.</p>
+	<% end %>
+
+	<% @support = capture do %>
+		<p>When you are awarded a Woof Gang Bakery franchise, you can count on support from our corporate and regional support staff.</p>
+	<% end %>
+
+	<% @training = capture do %>
+		<p>Training is comprised of two components to prepare franchisees for the operation of their store.</p>
+
+		<p>The first franchise training segment is an immersive session in Savannah, Georgia. Here, franchisees have the opportunity to work side-by-side with current franchisees to learn day-to-day operations. This in-store experience takes place throughout five different Woof Gang Bakery stores over a five day period.</p>
+
+		<p>The second training section is completed at your new store location with a Woof Gang Bakery representative providing guidance and instruction.</p>
+	<% end %>
+
+	<% @marketing = capture do %>
+		<p>We sure do! We understand the importance in creating awareness and building our brand image in each of the communities we serve. Marketing campaigns are developed to support the overall positioning of the Woof Gang Bakery brand. Marketing supports these objectives by assisting franchise owners with implementing their own local advertising, marketing, print and promotions programs.
+		New marketing tools and concepts are made available to our franchisees as they are developed.</p>
+	<% end %>
+
+	<% @vendors = capture do %>
+		<p>Yes. One of the benefits of joining an established franchise company is that solid relationships are in place with food distributors, product vendors, printing companies, equipment suppliers and others. Our purchasing department negotiates services and price agreements with approved suppliers and distributors.
+		You will be provided the systems and products that are identified as the approved core menu to create brand alignment and to leverage the purchasing power of our company.</p>
+	<% end %>
+
+	<% @construction = capture do %>
+		<p>Woof Gang Bakery has a full-time construction management division to lead you through all aspects of your store design, build out and permitting.</p>
+	<% end %>
+
+	<% @cost = capture do %>
+		<p>The approximate investment range for opening a<br class="xl"> Woof Gang Bakery store is between $144,300 to $211,100.</p>
+
+		<p>For additional details on the investment range of a single store, please refer to the investment section in the Franchise Disclosure Document. This information appears in Item 7 of our Franchise Disclosure Document issued on January 4, 2017. You should review the Franchise Disclosure Document for a full discussion of this and other information.</p>
+	<% end %>
+
+	<% @multi = capture do %>
+		<p>Yes. For qualified Woof Gang Bakery franchisees, you may apply for a multi-store agreement.</p>
+	<% end %>
+
+	<% @fees = capture do %>
+		<p>A 5% monthly royalty, a 1% monthly marketing fee and $99 per month for POS register system software.</p>
+	<% end %>
+
+	<% @vets = capture do %>
+		<p>Woof Gang Bakery is proud to offer active and retired U.S. military personnel $10,000 off of the initial franchise fee.</p>
+	<% end %>
+
+
+<div class="franchise-layout fl2 approval">
+	<div class="statement">
+		<div class="inside med2-def">
+			<h3>Do you have questions about becoming a Woof Gang Bakery franchisee?<br> Read through our list of FAQs below to learn more. <span>If your question isn't answered on this page, <%= link_to 'click here to contact our corporate office directly.', contact_path, class: 'text-link' %></span></h3>
+		</div>
+	</div>
+
+	<div class="col">
+		<div class="inside med">
+			<div class="full one">
+				<div class="faq-acc">
+					<ul uk-accordion="multiple: true">
+						<li class="acc-faq">
+							<a class="uk-accordion-title" href="#"><h4>Why Woof Gang Bakery?</h4></a>
+							<div class="uk-accordion-content"><%= @why %></div>
+						</li>
+
+						<li class="acc-faq">
+							<a class="uk-accordion-title" href="#"><h4>What do I need to apply as a franchisee?</h4></a>
+							<div class="uk-accordion-content"><%= @what %></div>
+						</li>
+
+						<li class="acc-faq">
+							<a class="uk-accordion-title" href="#"><h4>Will I have to be involved in the business full-time?</h4></a>
+							<div class="uk-accordion-content"><%= @involved %></div>
+						</li>
+
+						<li class="acc-faq">
+							<a class="uk-accordion-title" href="#"><h4>What operational support does Woof Gang Bakery provide?</h4></a>
+							<div class="uk-accordion-content"><%= @support %></div>
+						</li>
+
+						<li class="acc-faq">
+							<a class="uk-accordion-title" href="#"><h4>What type of training do you provide?</h4></a>
+							<div class="uk-accordion-content"><%= @training %></div>
+						</li>
+
+						<li class="acc-faq">
+							<a class="uk-accordion-title" href="#"><h4>Does Woof Gang Bakery help with marketing?</h4></a>
+							<div class="uk-accordion-content"><%= @marketing %></div>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="full two">
+				<div class="faq-acc">
+					<ul uk-accordion="multiple: true">
+
+						<li class="acc-faq">
+							<a class="uk-accordion-title" href="#"><h4>Do all franchises buy products from the same vendors?</h4></a>
+							<div class="uk-accordion-content"><%= @vendors %></div>
+						</li>
+
+						<li class="acc-faq">
+							<a class="uk-accordion-title" href="#"><h4>Do you offer advice on construction?</h4></a>
+							<div class="uk-accordion-content"><%= @construction %></div>
+						</li>
+
+						<li class="acc-faq">
+							<a class="uk-accordion-title" href="#"><h4>What does it cost to become a franchise owner?</h4></a>
+							<div class="uk-accordion-content"><%= @cost %></div>
+						</li>
+
+						<li class="acc-faq">
+							<a class="uk-accordion-title" href="#"><h4>Can I own more than one Woof Gang Bakery location?</h4></a>
+							<div class="uk-accordion-content"><%= @multi %></div>
+						</li>
+
+						<li class="acc-faq">
+							<a class="uk-accordion-title" href="#"><h4>What are the ongoing fees?</h4></a>
+							<div class="uk-accordion-content"><%= @fees %></div>
+						</li>
+
+						<li class="acc-faq">
+							<a class="uk-accordion-title" href="#"><h4>Do you offer assistance to military veterans?</h4></a>
+							<div class="uk-accordion-content"><%= @vets %></div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="image-row four">
+		<%= image_tag('fi-counter2.jpg', class: 'img-responsive img3', alt: 'Dog at Woof Gang checkout counter') %>
+		<%= image_tag('faq-grid1.jpg', class: 'img-responsive img1', alt: 'Pit Bull balancing Woof Gang Bakery treat on his nose') %>
+		<%= image_tag('faq-grid2.jpg', class: 'img-responsive img2', alt: "Customer's dog in Woof Gang Bakery store") %>
+		<%= image_tag('cg-smile.jpg', class: 'img-responsive img4', alt: 'Smiling golden dog at Woof Gang checkout counter') %>
+	</div>
+</div>

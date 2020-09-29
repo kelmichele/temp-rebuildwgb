@@ -1,0 +1,84 @@
+<% @page_title = "Self-Service Grooming" %>
+<% @page_description = "Woof Gang takes the hassle & mess out of bath time by providing a modern, spa-like atmosphere for you to bathe your dog!" %>
+
+<div class="services-layout ss-groom">
+	<div class="serv-slider inline-show">
+		<div class="inside lg">
+			<div class="il-slideshow uk-position-relative uk-visible-toggle uk-light" uk-slideshow="autoplay: true;max-height: 600; autoplay-interval: 4000; animation: push">
+				<div>
+			    <ul class="uk-slideshow-items">
+						<li><%= image_tag('self-service.jpg', class: 'img-responsive uk-cover', alt: 'Cute dog with a towel') %></li>
+						<li><%= image_tag('noses.jpg', class: 'img-responsive uk-cover', alt: 'Two dogs, nose-to-nose') %></li>
+						<li><%= image_tag('ssg-woodlands.jpg', class: 'img-responsive uk-cover', alt: 'Two dogs, nose-to-nose') %></li>
+			    </ul>
+			    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a> 
+			    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a> 
+			  </div>
+			</div>
+
+			<div class="title">
+	  	  <%= image_tag('plogo-ss.png', class: 'img-responsive srv-logo', alt: 'Woof Gang Bakery, self-service grooming logo')%>
+			</div>
+			<div class="seal"><div class="sicon"></div></div>
+		</div>
+	</div>
+
+	<div class="statement">
+		<div class="inside med2-def">
+	  	<div class="text">
+	  		<h1>Woof Gang Bakery <br class="xl">Self-Service Grooming</h1>
+	  		<p><span>Woof Gang takes the hassle &amp; mess out of bath time by providing a modern, spa-like atmosphere for you to bathe your dog!</span>
+	  		No more making a mess in your bathroom, or chasing your dog around the yard with a hose.
+	  		Use our supplies and facilities, and skip the cleanup.</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="locations-disc">
+		<div class="inside med2">
+			<h4>Self-Service Grooming is offered only at select locations.</h4>
+			<div class="btn-hlf">
+				<%= link_to "View Locations", "/self-service-locations", class: 'woof-link' %>
+			</div>
+		</div>
+	</div>
+
+	<div class="list-box alt">
+		<div class="inside med2-def">
+
+			<div class="sl-hlf">
+				<div class="sl1">
+					<h4>Benefits for You</h4>
+					<p>
+						We provide all the tools to make your dog look and smell great. All you need to provide is the dog!
+						Our self-service grooming allows you to have a one-on-one experience with your dog, and leave the mess with us.
+					</p>
+				</div>
+
+				<div class="sl2">
+					<h4>Benefits for Them</h4>
+					<p>
+						Having a healthy coat benefits your dog in so many ways.<br>
+						By maintaining good grooming habits, you are doing far more than just showing off that beautiful fur.
+						You are also giving your dog the gift of good health!
+					</p>
+				</div>
+			</div>
+
+			<div class="left">
+				<h4>Our Amenities</h4>
+				<ul class="disc">
+					<li>User-Friendly Set-Up,<br> Including Ramps</li>
+					<li>Shampoo & Conditioner</li>
+					<li>Variable Speed Warm Dryers</li>
+					<li>No Bending or Kneeling</li>
+					<li>Towels</li>
+					<li>Brushes</li>
+					<li>Warm Water</li>
+					<li>Aprons</li>
+				</ul>
+			</div>
+
+		</div>
+	</div>
+</div>

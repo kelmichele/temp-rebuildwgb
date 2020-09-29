@@ -1,0 +1,18 @@
+<% @page_title = "Media & Press Inquiries" %>
+<% @page_description = "Fill out the form on this page to reach out to Woof Gang Bakery's media relations team." %>
+
+
+<div class="full-sec" id="it-wrap" uk-grid>
+	<div class="intro-text">
+		<div class="full in-itext" style="z-index: 90;" uk-sticky=" bottom: #it-wrap;">
+			<%= image_tag('appa.jpg', class: 'img-responsive img-fw', alt: 'Dog on counter at Woof Gang Bakery store') %>
+			<%= image_tag('appa-mob.jpg', class: 'img-responsive img-mob', alt: 'Mobile version of dog on counter at Woof Gang Bakery store') %>
+		</div>
+	</div>
+
+	<div class="form-side">
+		<h1><%= @page_title %></h1>
+		<p class="bmargin0">Please provide a few details for a timely response from our media relations team. Thank you for your interest in Woof Gang Bakery! </p>
+    <%= render 'form' %>
+  </div>
+</div>

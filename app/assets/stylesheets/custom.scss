@@ -1,0 +1,171 @@
+// @import url('https://fonts.googleapis.com/css?family=Helvetica+Neue:300,400,500,600;');
+@import "mixins";
+@import "variables";
+
+html {
+  box-sizing: border-box;
+  -ms-overflow-style: scrollbar;
+}
+
+
+// @font-face {
+//     font-family: 'Helvetica Neue';
+//     src: url('HelveticaNeue.eot');
+//     src: url('HelveticaNeue.eot?#iefix') format('embedded-opentype'),
+//         url('HelveticaNeue.woff2') format('woff2'),
+//         url('HelveticaNeue.woff') format('woff');
+//     font-weight: normal;
+//     font-style: normal;
+// }
+
+
+
+// @font-face {
+//     font-family: 'Helvetica Neue Mid';
+//     src: url('HelveticaNeue-Light.eot');
+//     src: url('HelveticaNeue-Light.eot?#iefix') format('embedded-opentype'),
+//         url('HelveticaNeue-Light.woff2') format('woff2'),
+//         url('HelveticaNeue-Light.woff') format('woff');
+//     font-weight: 300;
+//     font-style: normal;
+// }
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+
+  @media (min-width: 576px) {max-width: 556px;}
+  @media (min-width: 768px) {max-width: 748px;}
+  @media (min-width: 992px) {max-width: 972px;}
+  @include bp(dt) {max-width: 1180px;}
+  @include bp(ph) {max-width: 90%;}
+}
+
+.container-fluid {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+
+  &.full{
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+
+body {
+  border-top: 10px solid $brown;
+  border-bottom: 10px solid $brown;
+  margin:0;
+	line-height: 1.5em;
+  font-family: $body;
+  @include sec-default();
+
+  @include bp(br) {
+    border-top: 0;
+  }
+
+  // &.safari {-webkit-font-smoothing: antialiased;}
+  h1, h2, h3, h4, h5, p, li, a {color: $black; line-height: 1.5em;font-family: $body;
+    &.bmargin0 {margin-bottom: 0;}
+    &.pop{font-family: $pop;}
+    &.pink {color: $pink;}
+    &.brown {color: $brown;}
+    &.strong {font-weight: bold;}
+    &.semi {font-weight: $semi;}
+  }
+  p,li{font-weight: 300;}
+  p{font-size: 17px;}
+  h1{font-size: 2rem;}
+  h2{font-size: 1.75rem;}
+  h2.lineheight{line-height: 1.5em;}
+}
+.bmargin0 {margin-bottom: 0;}
+.tmargin0 {margin-top: 0;}
+
+.text-center {text-align: center;}
+
+.visually-hidden {
+  @include visuallyHidden();
+}
+
+.img-responsive {max-width: 100%; height: auto; display:block;}
+ul{margin:0;}
+li {list-style-type: none;}
+ul.disc li{list-style-type: disc;}
+
+a {
+  &:focus,
+  &:hover {
+    opacity: .7;
+    text-decoration: none;
+  }
+}
+
+.scroll-up {
+  width: 25px;
+  height: 25px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  text-indent: -9999px;
+  background-color: $white;
+  background-image: url(image_path('up.png'));
+  background-size:80%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  z-index: 100;
+
+  @include bp(tb) { right: 15px; }
+  @include bp(sm) { right: 5px; }
+}
+
+
+
+// forms //
+.msg-bx {@include sec-default();
+  .alert-top {padding:8px 0;}
+}
+.notice, .notice p, p.alert.scs, .alert-top {color: $red; text-align: center;}
+
+.panel.panel-danger.err {
+  // width:90%; @include center-block();
+  margin:30px 0;
+  border-bottom: 1px solid rgba($red,.5); padding-bottom: 15px;
+  h4.panel-title {background-color: rgba($red, .8); color: $white; @include tshadowl(rgba($black, .7)); margin-bottom:10px;padding-left: 10px;}
+  li {color: $red; margin-bottom:5px; list-style-type: disc;}
+}
+.alert.alert-success {background-color: rgba(0,146,13, .2); color: $black;}
+
+
+p.print {font-size: .9rem; margin-top: 7px; color: $compt;}
+form{
+  fieldset{border:0;}
+  input, textarea,select {width:100%; height:30px;margin-top:3px; font-size: 15px; padding-left: 5px;}
+  textarea{height: 100px;padding-top:3px;}
+  label{font-size: 15px; color: $tbrown; font-weight: $semi}
+  .form-group.submit{@include sec-default();
+    input.send-message, input[type=submit] {width:20%; height:auto; background-color: $pink; font-size: 16px; color: $white; font-weight: $semi; padding: 8px 10px;}
+  }
+}

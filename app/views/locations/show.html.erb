@@ -1,0 +1,145 @@
+<% @page_title = @location.store_name.titleize %>
+<% @page_description = "Check out the details for the Woof Gang Bakery #{@location.ntitle} location. Contact the store directly for more information." %>
+
+<div class="location-page">
+	<div class="title">
+		<% if @location.coming_soon?  %>
+			<h4>Coming Soon</h4>
+		<% end %>
+
+		<% if @location.store_name.include? "Grooming" %>
+			<h2>Woof Gang Bakery & Grooming </h2>
+		<% else %>
+			<h2>Woof Gang Bakery</h2>
+		<% end %>
+		<h1><%= @location.ntitle %></h1>
+
+		<% if user_signed_in? && current_user.admin? %>
+			<button class="admin-uk wl-uk uk-float-right" type="button"><span  uk-icon="icon: settings;"></span></button>
+	    <div uk-dropdown="mode: click; pos: bottom-right; boundary: .wl-uk;">
+				<%= link_to("Edit Location (#{@location.id})", edit_location_path(@location), class: 'woof-link cst') %>
+  			<%= link_to 'Add a Location', new_location_path, class: 'woof-link cst btm' %>
+      </div>
+		<% end %>
+
+	</div>
+
+ 	<div class="full">
+
+		<div class="inside med2">
+		 	<div class="location-body">
+
+				<div class="location-dets">
+					<div class="full top">
+						<h3>Store Details</h3>
+
+						<div class="btn-row">
+							<a href="<%= @location.direct_link %>" target="_blank" class="woof-link">Directions </a>
+						</div>
+					</div>
+					<div class="clearfix"></div><hr class="one">
+
+
+					<div class="cat address">
+						<p class="addr"><%= @location.street_address_one.strip %><br>
+						<% if @location.street_address_two %>
+							<span class="addr2"><%= @location.street_address_two %></span>
+						<% end %>
+						<%= @location.city.strip %>, <%= @location.state.name %> <%= @location.zip %></p>
+					</div>
+
+					<div class="clearfix"></div><hr class="one">
+					<div class="cat phone">
+						<p><a href="tel:<%= @location.phone %>"><%= number_to_phone(@location.phone, delimiter: '-') %></a></p>
+					</div>
+
+					<div class="cat email">
+					</div>
+
+					<div class="cat soc">
+						<a href="mailto:<%= @location.email_address %>"><span uk-icon="icon: mail;"></span></a>
+						<!-- < if @location.list_links.count > 0 %> -->
+							<% if @location.fb && @location.fb.size > 1 %>
+								<a href="https://www.facebook.com<%= @location.fb %>" target="_blank"><span class="linkcon" uk-icon="icon: facebook;"></span></a>
+							<% end %>
+
+							<% if @location.insta && @location.insta.size > 1 %>
+								<a href="https://www.instagram.com<%= @location.insta %>" target="_blank"><span class="linkcon" uk-icon="icon: instagram;"></span></a>
+							<% end %>
+
+							<% if @location.twitter && @location.twitter.size > 1 %>
+								 <!-- != ''  -->
+								<a href="https://twitter.com<%= @location.twitter %>" target="_blank"><span class="linkcon" uk-icon="icon: twitter;"></span></a>
+							<% end %>
+
+							<% if @location.yelp && @location.yelp.size > 1 %>
+								<a href="https://www.yelp.com/biz<%= @location.yelp %>" target="_blank"><span class="linkcon" uk-icon="icon: yelp;"></span></a>
+							<% end %>
+
+							<% if @location.site && @location.site.size > 1 %>
+								<a href="<%= @location.site %>" target="_blank"><span class="linkcon" uk-icon="icon: link;"></span></a>
+							<% end %>
+						<!-- < end %> -->
+					</div>
+
+					<div class="clearfix"></div><hr class="one">
+					<% if @location.hours %>
+						<div class="cat hours">
+							<p class="hd">Hours of Operation:</p>
+							<p>
+								<% @location.c_hours.each do |c_hours| %>
+									<%= c_hours %><br>
+								<% end %>
+							</p>
+						</div>
+					<% end %>
+
+					<div class="cat tags">
+						<p class="hd">Store Services:</p>
+						<% if @location.tag_ids.include? 9 %>
+							<button class="tag-icon retail" uk-tooltip="Retail">
+								<span class="tag-img"></span>
+							</button>
+						<% end %>
+
+						<% if @location.tag_ids.include? 1 %>
+							<button class="tag-icon grooming" uk-tooltip="Grooming">
+								<span class="tag-img"></span>
+							</button>
+						<% end %>
+
+						<% if @location.tag_ids.include? 2 %>
+							<button class="tag-icon self-service-grooming" uk-tooltip="Self Service Grooming">
+								<span class="tag-img"></span>
+							</button>
+						<% end %>
+
+						<% if @location.tag_ids.include? 3 %>
+							<button class="tag-icon doggie-daycare" uk-tooltip="Doggie Daycare">
+								<span class="tag-img"></span>
+							</button>
+						<% end %>
+
+						<% if @location.tag_ids.include? 0 %>
+							<button class="tag-icon veterinary-clinic" uk-tooltip="Veterinary Clinic">
+								<span class="tag-img"></span>
+							</button>
+						<% end %>
+
+					</div>
+				</div>
+
+				<% if @location.image.attached? %>
+			 		<div title="<%= @location.store_name %> store exterior" class="image attach"><%= image_tag @location.image %></div>
+				<% else %>
+
+					<div class="image">
+						<%= image_tag('woof-box.jpg', class: 'img-responsive', alt: 'Woof Gang Bakery store interior')%>
+					</div>
+				<% end %>
+
+			</div>
+		</div>
+
+	</div>
+</div>

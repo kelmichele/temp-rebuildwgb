@@ -1,0 +1,70 @@
+<%= render 'shared/errors', obj: @contact %>
+<%= form_for @contact, url: contact_path do |contact| %>
+  <fieldset>
+   <!--  < if flash[:notice] %>
+      <div class="notice"><%= flash[:notice] %></div>
+    < end %> -->
+
+    <% if flash[:alert] %>
+      <div class="notice"><%= flash[:alert] %></div>
+    <% end %>
+
+    <div class="full top">
+      <p class="msg">To make a grooming appointment or for specific product questions, visit the <%= link_to 'Locations page', locations_path, class: 'text-link' %> to contact your local store directly. For general inquires, comments and questions, please fill out the contact form below:</p>
+      <hr>
+      <h4>Contact Form</h4>
+      <p class="print">* indicates required field</p>
+      <div class="clearfix"></div><hr>
+    </div>
+
+    <div class="form-group name">
+      <label>* Full Name:</label><br>
+      <%= contact.text_field :name %>
+    </div>
+
+    <div class="form-group phone">
+      <label>* Phone: </label><br>
+      <%= contact.text_field :phone %>
+    </div>
+
+    <div class="form-group email">
+      <label>* Email: </label><br>
+      <%= contact.email_field :email %>
+    </div>
+
+    <div class="form-group grapevine">
+      <%= contact.select(:grapevine) do %>
+        <% [['How did you hear about us?', ''], ['Advertising', 'Advertising'], ['Social Media', 'Social Media'], ['Family/Friend', 'Family/Friend'], ['Google', 'Google'], ['Event', 'Event'], ['Other', 'Other']].each do |c| -%>
+          <%= content_tag(:option, c.first, value: c.last) %>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="clearfix"></div>
+
+    <div class="form-group state">
+      <%= contact.collection_select(:singup, State.all, :id, :full_name, :prompt => "* Nearest Location") %>
+    </div>
+
+    <div class="form-group location">
+      <label>* Select a store: </label><br>
+      <%= grouped_collection_select(:contact, :location, @states, :locations, :full_name, :title_state, :ntitle) %>
+    </div>
+    <div class="clearfix"></div>
+
+    <div class="form-group content">
+      <label>* Questions/Comments:</label><br>
+      <%= contact.text_area :content %>
+    </div>
+
+    <div class="form-group honey">
+      <%= label_tag :honey %>
+      <%= contact.text_field :honey %>
+      <span class="help">Do not fill in this field. It is an anti-spam measure.</span>
+    </div>
+
+    <div class="form-group submit">
+      <%= contact.submit "Submit", :class=> "send-message" %>
+    </div>
+
+  </fieldset>
+<% end %>

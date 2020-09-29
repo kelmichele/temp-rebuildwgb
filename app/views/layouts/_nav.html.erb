@@ -1,0 +1,34 @@
+<ul class="uk-navbar-nav">
+  <li><%= link_to "Home", root_path %></li>
+  <li>
+    <a href="#">Franchising</a>
+    <div class="uk-navbar-dropdown">
+      <ul class="uk-nav uk-navbar-dropdown-nav">
+        <li><%= link_to "Franchising", franchising_path %></li>
+        <li><%= link_to "Training & Support", training_support_path %></li>
+        <li><%= link_to "Approval Process", approval_process_path %></li>
+        <li><%= link_to "Real Estate", real_estate_path %></li>
+        <li><%= link_to "Franchise FAQs", faq_path %></li>
+        <li><%= link_to "Franchise Inquiries", franchise_inquiries_path %></li>
+      </ul>
+    </div>
+  </li>
+
+  <li><%= link_to "Locations", locations_path %></li>
+  <li>
+    <a href="#">Services</a>
+    <div class="uk-navbar-dropdown">
+      <ul class="uk-nav uk-navbar-dropdown-nav">
+        <li><%= link_to "Retail", retail_path %></li>
+        <li><%= link_to "Grooming", grooming_path %></li>
+        <li><%= link_to "Self-Service Grooming", self_service_grooming_path %></li>
+        <li><%= link_to "Day Care & Pet Resort", doggie_daycare_path %></li>
+        <li><%= link_to "Wellness Clinic", vet_clinic_path %></li>
+      </ul>
+    </div>
+  </li>
+
+  <li><%= link_to "Blog", blog_path %></li>
+
+  <li><%= link_to "Contact Us", contact_path %></li>
+</ul>

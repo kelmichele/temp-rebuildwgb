@@ -1,0 +1,37 @@
+<% @page_title = "User Account" %>
+<% @page_description = "New Description" %>
+
+<div class="ipage-header">
+	<div class="inside">
+		<h1 class="bmargin0">Hi, <%= current_user.email %></h1>
+		<h2 class="tmargin0">Welcome to your account</h2>
+		<a href="https://ipapi.co/json/" target="_blank">Where am I?</a>
+	</div>
+</div>
+
+
+<div class="full-sec">
+	<div class="inside">
+		<div class="left">
+			<h4>Account Info</h4>
+			<h3><%= link_to "Edit account info", edit_user_registration_path %></h3>
+			<h3><%= link_to 'Log Out', destroy_user_session_path, method: :delete %></h3>
+
+			<h4>Locations</h4>
+			<h3><%= link_to "Create a new location", new_location_path %></h3>
+			<h3><%= link_to "View/Edit locations", locations_path %></h3>
+			<h3><%= link_to "Create a new state", new_state_path %></h3>
+			<h3><%= link_to "View/Edit states", states_path %></h3>
+
+			<h4>Blog Posts</h4>
+			<h3><%= link_to "Create a blog post", new_post_path %></h3>
+			<h3><%= link_to "View/Edit blog posts", blog_path %></h3>
+		</div>
+
+		<div class="right">
+			<h4>Slider</h4>
+			<h3><%= link_to "Add a new slide", new_slide_path %></h3>
+			<h3><%= link_to "View/Edit slides", slides_path %></h3>
+		</div>
+	</div>
+</div>

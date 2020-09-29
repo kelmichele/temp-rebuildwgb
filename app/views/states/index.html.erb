@@ -1,0 +1,28 @@
+<% @page_title = "Manage States" %>
+
+<div class="ipage-header">
+	<div class="inside narrow">
+		<div class="full">
+			<h1><%= @page_title %></h1>
+		</div>
+	</div>
+</div>
+
+
+<div class="full-sec states">
+	<div class="inside med2-def">
+		<% for state in @states %>
+		 	<div class="state-li">
+				<%= link_to state_path(state) do %>
+					<p><%= state.id %>. <%= state.full_name %></p>
+				<% end %>
+				
+				<% if user_signed_in? && current_user.admin? %>
+					<div class="actions">
+						<span><%= link_to "Edit", edit_state_path(state) %></span>
+					</div>
+				<% end %>
+		 	</div>
+	  <% end %>
+	</div>
+</div>

@@ -1,0 +1,120 @@
+<select id="locate_list" class="form-select">
+  <option selected value="">Select a state...</option>
+  <option value="Connecticut">Connecticut</option>
+  <option value="Florida">Florida</option>
+  <option value="Georgia">Georgia</option>
+  <option value="Kansas">Kansas</option>
+  <option value="Nevada">Nevada</option>
+  <option value="NewJersey">New Jersey</option>
+  <option value="NewYork">New York</option>
+  <option value="NorthCarolina">North Carolina</option>
+  <option value="SouthCarolina">South Carolina</option>
+  <option value="Tennesse">Tennesse</option>`
+  <option value="Texas">Texas</option>
+  <option value="Virginia">Virginia</option>
+</select>
+
+
+<div style="display:none" id="Connecticut" class="location-select">
+  <%= contact.collection_select(:location, @ct.each, :title_state, :ntitle) %>
+</div>
+
+<div style="display:none" id="Florida" class="location-select">
+  <%= contact.collection_select(:location, @fl.each, :title_state, :ntitle) %>
+</div>
+
+<div style="display:none" id="Georgia" class="location-select">
+  <%= contact.collection_select(:location, @ga.each, :title_state, :ntitle) %>
+</div>
+
+<div style="display:none" id="Kansas" class="location-select">
+  <%= contact.collection_select(:location, @ks.each, :title_state, :ntitle) %>
+</div>
+
+<div style="display:none" id="Nevada" class="location-select">
+  <%= contact.collection_select(:location, @nv.each, :title_state, :ntitle) %>
+</div>
+
+<div style="display:none" id="NewJersey" class="location-select">
+  <%= contact.collection_select(:location, @nj.each, :title_state, :ntitle) %>
+</div>
+
+<div style="display:none" id="NewYork" class="location-select">
+  <%= contact.collection_select(:location, @ny.each, :title_state, :ntitle) %>
+</div>
+
+<div style="display:none" id="NorthCarolina" class="location-select">
+  <%= contact.collection_select(:location, @nc.each, :title_state, :ntitle) %>
+</div>
+
+<div style="display:none" id="SouthCarolina" class="location-select">
+  <%= contact.collection_select(:location, @sc.each, :title_state, :ntitle) %>
+</div>
+
+<div style="display:none" id="Tennesse" class="location-select">
+  <%= contact.collection_select(:location, @tn.each, :title_state, :ntitle) %>
+</div>
+
+<div style="display:none" id="Texas" class="location-select">
+  <%= contact.collection_select(:location, @tx.each, :title_state, :ntitle) %>
+</div>
+
+<div style="display:none" id="Virginia" class="location-select">
+  <%= contact.collection_select(:location, @va.each, :title_state, :ntitle) %>
+</div>
+
+<script>
+jQuery(document).ready(function(){
+  jQuery('#locate_list').change(function(){
+    form = jQuery(this).val();
+    if(form){
+      // $(".location-select").attr("id", form);
+      jQuery('.location-select').hide();
+      jQuery('#'+form).show();
+    }
+  });
+});
+</script>
+
+
+
+
+
+
+<!-- data-storerocket-filters='fill' -->
+<select id="locate_list" class="serviceFilter">
+  <option selected value="">Select a Service...</option>
+  <option value="Retail">Retail</option>
+  <option value="Grooming">Grooming</option>
+  <option value="Day Care & Pet Resort">DayCare</option>
+  <option value="Self-Service Grooming">SelfService</option>
+</select>
+
+
+<script>
+  jQuery(document).ready(function(){
+   jQuery('.serviceFilter').change(function(){
+      filterChosen = jQuery(this).val();
+
+      var mapWidge = document.getElementById('storerocket-widget');
+     
+      if (filterChosen == "Retail" ) {
+        // var num = "1013"
+        mapWidge.setAttribute('data-storerocket-filters', "1013");
+        console.log("1013");
+      } else if (filterChosen == "Grooming") {
+        // var num = "1014";
+        mapWidge.setAttribute('data-storerocket-filters', "1014");
+        console.log("1014");
+      } else if (filterChosen == "DayCare") {
+        // var num = "1015";
+        mapWidge.setAttribute('data-storerocket-filters', "1015");
+        console.log("1015");
+      } else if (filterChosen == "SelfService") {
+        // var num = "1014";
+        mapWidge.setAttribute('data-storerocket-filters', "1016");
+        console.log("1016");
+      } 
+    });
+  });
+</script>

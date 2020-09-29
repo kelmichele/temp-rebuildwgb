@@ -1,0 +1,49 @@
+<% @page_title = "Franchise Inquires" %>
+<% @page_description = "Are you interested in becoming a Woof Gang Bakery franchisee? Fill out our franchise inquiry form today for more information." %>
+
+<div class="franchise-head v2">
+	<div class="inside med">
+		<%= image_tag('franch-inq.JPG', class: 'img-responsive feat', alt: 'Woof Gang Bakery wrapped suv') %>
+
+		<div class="text">
+			<h2>Become a Woof Gang Bakery Franchisee</h2>
+			<h1><%= @page_title %></h1>
+		</div>
+		<div class="seal"><div class="sicon"></div></div>
+	</div>
+</div>
+
+<div class="franchise-layout fl1">
+
+	<div class="content-layout" id="image-wrap" uk-grid>
+		<div  class="full one fw">
+			<div class="inside med-def">
+				<div class="image">
+					<div class="full inimage" style="z-index: 90; padding-bottom:80px;" uk-sticky="offset:130; bottom: #image-wrap;">
+						<%= image_tag('fluff.jpg', class: 'img-responsive img-fw', alt: 'Fluffy little puppy on a Woof Gang Bakery box') %>
+					</div>
+				</div>
+
+				<div class="text">
+			    <%= render 'form' %>
+			  </div>
+			</div>
+		</div>
+	</div>
+
+	<div class="landing-layout">
+		<div class="box one">
+			<div class="inside med2-def">
+				<div class="image">
+					<%= image_tag('inquiries.jpg', class: 'img-responsive img1', alt: 'Woof Gang Bakery store interior') %>
+					<%= image_tag('inquiries1.jpg', class: 'img-responsive img2', alt: 'French bulldog visiting a Woof Gang Bakery opening') %>
+				</div>
+
+				<div class="text">
+					<p>For general inquires, comments and questions, please <%= link_to('click here to contact our corporate office directly.', contact_path, class: 'text-link') %></p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>

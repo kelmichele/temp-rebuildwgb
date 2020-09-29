@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!-- < if current_page?('/locations') %><meta name="turbolinks-visit-control" content="reload">< end %> -->
+    <%= favicon_link_tag 'favicon.png' %>
+
+    <!-- < csp_meta_tag %> -->
+
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.16/css/uikit.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Helvetica+Neue:300,400,500,600" rel="stylesheet">
+    <%= render 'layouts/rails-default' %>
+    <%= render 'layouts/shim' %>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112665115-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-112665115-1');
+    </script>
+
+    <!-- UIkit JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.16/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.16/js/uikit-icons.min.js"></script>
+  </head>
+
+  <body class="<%= controller_name %> <%= action_name %>">
+    <%= render 'layouts/header' %>
+    <div class="page-body">
+      <div class="inside">
+        <%= render 'shared/messages' %>
+      </div>
+
+      <%= yield %>
+    </div>
+    <!-- = render 'shared/chat' %> -->
+    <%= render 'layouts/footer' %>
+  </body>
+</html>

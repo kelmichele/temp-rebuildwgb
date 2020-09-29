@@ -1,0 +1,89 @@
+<% @page_title = "Pet Grooming in #{@state.full_name}" %>
+<% @page_description = "New Description" %>
+
+
+<div class="ipage-header">
+	<div class="inside narrow">
+		<h1>Locations in <%= @state.full_name %></h1>
+		<h2>Use the map below to find a location near you.</h2>
+	</div>
+
+	<% if user_signed_in? && current_user.admin? %>
+  	<div class="boundary-align uk-panel">
+	    <button class="admin-uk wl-uk uk-float-right" type="button"><span  uk-icon="icon: settings;"></span></button>
+	    <div uk-dropdown="mode: click; pos: bottom-right; boundary: .wl-uk;">
+      	<div class="admin-btns">
+      		<!-- <div class="manu"> -->
+      			<%= link_to 'Add a Location', new_location_path, class: 'woof-link' %>
+						<%= link_to "Add a State", new_state_path, class: 'woof-link' %>
+      		<!-- </div> -->
+      	</div>
+    	</div>
+    </div>
+	<% end %>
+</div>
+
+<div class="full-search">
+	<div class="inside">
+		<div class="full-back">
+			<%= link_to locations_path, class: "back-link" do %>
+				<span uk-icon="icon: arrow-left"></span> Back to Locations Page
+			<% end %>
+		</div>
+	</div>
+
+
+	<div class="full listings" uk-filter="target: .js-filter">
+		<div class="inside lg">
+			<div class="platform">
+				<div class="map">
+			    <%= tag.div nil, id: 'map' %>
+				</div>
+
+				<div class="loclist">
+					<div class="boundary-align uk-panel filter-box tags">
+				    <div class="filter-uk">Filter Locations by Service <span class="dd-btn" uk-icon="icon: chevron-down;"></span></div>
+
+			    	<div uk-dropdown="mode: click; pos: bottom-right; boundary: .filter-uk;">
+						  <ul class="filterList">
+							  <li class="filter-tag retail" uk-filter-control="[data-tags*='retail']">
+							  	<span class="tag-icon retail"></span>
+							  	Retail
+							  	<span class="acticon" uk-icon="icon:check"></span>
+							  </li>
+							  
+							  <li class="filter-tag grooming" uk-filter-control="[data-tags*='grooming']">
+							  	<span class="tag-icon grooming"></span>
+							  	Grooming
+							  	<span class="acticon" uk-icon="icon:check"></span>
+							  </li>
+							  
+							  <li class="filter-tag self-service-grooming" uk-filter-control="[data-tags*='self-service-grooming']">
+							  	<span class="tag-icon self-service-grooming"></span>
+							  	Self-Service Grooming
+							  	<span class="acticon" uk-icon="icon:check"></span>
+							  </li>
+							  
+							  <li class="filter-tag doggie-daycare" uk-filter-control="[data-tags*='doggie-daycare']">
+							  	<span class="tag-icon doggie-daycare"></span>
+							  	Day Care &amp; Pet Resort
+							  	<span class="acticon" uk-icon="icon:check"></span>
+							  </li>
+
+							  <li class="filter-tag veterinary-clinic" uk-filter-control="[data-tags*='veterinary-clinic']">
+							  	<span class="tag-icon veterinary-clinic"></span>
+							  	Wellness Clinic
+							  	<span class="acticon" uk-icon="icon:check"></span>
+							  </li>
+							</ul>
+						</div>
+			    </div>
+					
+					<%= render partial: "locations/list" %>
+					<hr class="loc-brd">
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
