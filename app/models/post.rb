@@ -9,6 +9,15 @@ class Post < ApplicationRecord
   validates :url, presence: true
 
   default_scope -> { order(date: :desc) }
+  
+  include Rails.application.routes.url_helpers
+  def img_info
+  	if image.attached?
+      image_url = rails_blob_path(image, only_path: true)
+    else 
+      ""
+    end
+  end
 
   def pug
     "#{url}".downcase.parameterize
@@ -46,14 +55,26 @@ class Post < ApplicationRecord
 	  end
 	end
 
+
 	def self.to_csv(options = {})
-	  desired_columns = ["id", "title", "content", "url", "date", "slug"]
+	  desired_columns = ["id", "title", "content", "url", "date", "slug", "image"]
 	  CSV.generate(options) do |csv|
 	    csv << desired_columns
 	    all.each do |post|
-	      csv << post.attributes.values_at(*desired_columns)
+        csv << [post.id, post.title, post.content, post.url, post.date, post.slug, post.img_info]
 	    end
 	  end
 	end
+
+
+	# def self.to_csv(options = {})
+	#   desired_columns = ["id", "title", "content", "url", "date", "slug"]
+	#   CSV.generate(options) do |csv|
+	#     csv << desired_columns
+	#     all.each do |post|
+	#       csv << post.attributes.values_at(*desired_columns)
+	#     end
+	#   end
+	# end
 
 end
